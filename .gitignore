@@ -1,0 +1,75 @@
+# --- Environment & secrets ---
+.env
+.env.*
+*.key
+
+# --- Python ---
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# --- Virtual environments ---
+venv/
+env/
+ENV/
+myenv/
+.venv/
+
+# --- Jupyter ---
+.ipynb_checkpoints/
+
+# --- Data & models (large/generated files — don't commit) ---
+data/raw/
+data/processed/
+data/qdrant_db/
+qdrant_storage/
+*.xml
+*.zip
+*.jsonl
+*.parquet
+*.faiss
+*.index
+models/
+*.bin
+*.pt
+*.safetensors
+
+# --- Logs & tracing ---
+*.log
+logs/
+logfire_logs/
+
+# --- IDE / editor ---
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# --- OS files ---
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# --- Testing / caching ---
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+htmlcov/
+.coverage
