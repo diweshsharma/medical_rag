@@ -18,3 +18,7 @@ langgraph
 groq
 logfire
 openai
+langchain-openai
+langchain-groq
+langchain-anthropic
+langchain-google-genai
