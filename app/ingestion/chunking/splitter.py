@@ -6,7 +6,7 @@ def chunking(docs):
     """load documents and split them into chunks """
     with logfire.span("chunking"):
         splitter = RecursiveCharacterTextSplitter(
-            seperator =["\n\n" , "\n" , " ", ""],
+            separators =["\n\n" , "\n" , " ", ""],
             chunk_size = 1000,
             chunk_overlap = 200,
 
@@ -14,10 +14,10 @@ def chunking(docs):
 
         all_chunks = []
         for doc in docs:
-            splits = splitter.split_text(doc)
+            splits = splitter.split_text(doc.page_content)
 
             for i, split_text in enumerate(splits):
-                chunk_metadata = dict[doc.metadata]
+                chunk_metadata = dict(doc.metadata)
                 chunk_metadata['chunk_index'] = i
                 chunk_metadata["chunk_id"] = f"{doc.metadata.get('id')}_{i}"
                 chunk_metadata["total_chunks"] = len(splits)
@@ -27,7 +27,7 @@ def chunking(docs):
                     "metadata": chunk_metadata,
                     
                 })
-        logfire.info("Number of chunks", len(all_chunks))
+        logfire.info("Number of chunks: {count}", count=len(all_chunks))
         return all_chunks
         
 
